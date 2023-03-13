@@ -6,6 +6,9 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import throttler from 'express-rate-limit';
 
+// import RUTAS
+import ticketStadisticsRouter from "./v1/routes/ticketStadisticsRoutes";
+
 const app = express();
 // Options CORS
 const corsOptions = {
@@ -32,5 +35,6 @@ app.get('/',(req, res)=>{
     res.send('INTEGRACION GLPI - DASHBOARD');
 });
 
+app.use("/api/v1/ticketstadistics", ticketStadisticsRouter);
 
 export default app;

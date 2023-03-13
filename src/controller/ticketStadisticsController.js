@@ -1,4 +1,4 @@
-import { TicketStadisticsService } from "../services";
+import { TicketStadisticsService } from "../services/ticketStadisticsService";
 const ticketStadisticsService = TicketStadisticsService.getInstance();
 import { Response } from "../lib/Response";
 const response = new Response();
@@ -6,6 +6,7 @@ const response = new Response();
 const getEvolutionTickets = async (req, res) => {
     try {
         const result = await ticketStadisticsService.getEvolutionTickets();
+        console.log(result);
         return res.status(200).send({
             messages: ["Success"],
             code: ["0000"],
