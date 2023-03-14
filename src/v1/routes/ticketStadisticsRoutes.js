@@ -4,6 +4,8 @@ import ticketStadisticsController from "../../controller/ticketStadisticsControl
 import { setHeaders } from '../../middleware/index';
 
 ticketStadisticsRouter  
-  .get("/evolution",[setHeaders],ticketStadisticsController.getEvolutionTickets);
+  .get("/getTicketsEvolution",[setHeaders],ticketStadisticsController.getEvolutionTickets)
+  .get("/getIndicators", [setHeaders], ticketStadisticsController.getIndicators);
+
 
 export default ticketStadisticsRouter;
